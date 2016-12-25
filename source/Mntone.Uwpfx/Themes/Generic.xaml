@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary Source="/Uwpfx;component/Themes/Generic.Text.xaml" />
+		<ResourceDictionary Source="/Uwpfx;component/Themes/Generic.Menu.xaml" />
+		<ResourceDictionary Source="/Uwpfx;component/Themes/Generic.TextBox.xaml" />
+		<ResourceDictionary Source="/Uwpfx;component/Themes/Generic.ToolTip.xaml" />
+		<ResourceDictionary Source="/Uwpfx;component/Themes/Generic.ScrollBar.xaml" />
+		<ResourceDictionary Source="/Uwpfx;component/Themes/Generic.ScrollViewer.xaml" />
+		<ResourceDictionary Source="/Uwpfx;component/Themes/Generic.Button.xaml" />
+		<ResourceDictionary Source="/Uwpfx;component/Themes/Generic.Window.xaml" />
+	</ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

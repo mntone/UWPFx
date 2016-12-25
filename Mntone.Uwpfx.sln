@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mntone.Uwpfx", "source\Mntone.Uwpfx\Mntone.Uwpfx.csproj", "{D5D2B8E1-9A30-462B-9690-FC5717B2ECF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mntone.Uwpfx.Sample", "sample\Mntone.Uwpfx.Sample\Mntone.Uwpfx.Sample.csproj", "{47C1C447-C987-4462-9FBA-FC4040C127DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D5D2B8E1-9A30-462B-9690-FC5717B2ECF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5D2B8E1-9A30-462B-9690-FC5717B2ECF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5D2B8E1-9A30-462B-9690-FC5717B2ECF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5D2B8E1-9A30-462B-9690-FC5717B2ECF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47C1C447-C987-4462-9FBA-FC4040C127DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47C1C447-C987-4462-9FBA-FC4040C127DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47C1C447-C987-4462-9FBA-FC4040C127DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47C1C447-C987-4462-9FBA-FC4040C127DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

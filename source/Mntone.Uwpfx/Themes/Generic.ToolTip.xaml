@@ -1,0 +1,62 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:sys="clr-namespace:System;assembly=mscorlib"
+					xmlns:ani="clr-namespace:Mntone.Uwpfx.Media.Animation">
+	<PopupAnimation x:Key="{x:Static SystemParameters.ToolTipPopupAnimationKey}">None</PopupAnimation>
+	
+	<Thickness x:Key="ToolTipBorderThemeThickness">1.01</Thickness>
+	<sys:Double x:Key="ToolTipContentThemeFontSize">12</sys:Double>
+
+	<Style x:Key="{x:Type ToolTip}"
+		   TargetType="ToolTip">
+		<Setter Property="Background"
+				Value="{DynamicResource SystemControlBackgroundChromeMediumLowBrush}" />
+		<Setter Property="Foreground"
+				Value="{DynamicResource SystemControlForegroundBaseHighBrush}" />
+		<Setter Property="BorderBrush"
+				Value="{DynamicResource SystemControlForegroundChromeHighBrush}" />
+		<Setter Property="BorderThickness"
+				Value="{StaticResource ToolTipBorderThemeThickness}" />
+		<Setter Property="FontFamily"
+				Value="{DynamicResource ContentControlThemeFontFamily}" />
+		<Setter Property="FontSize"
+				Value="{StaticResource ToolTipContentThemeFontSize}" />
+		<Setter Property="Padding"
+				Value="8,5,8,7" />
+
+		<Setter Property="HasDropShadow"
+				Value="False" />
+		<Setter Property="RenderOptions.ClearTypeHint"
+				Value="Enabled" />
+		<Setter Property="SnapsToDevicePixels"
+				Value="True" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="ToolTip">
+					<Border x:Name="Border"
+							Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							MaxWidth="320"
+							SnapsToDevicePixels="True">
+						<ContentPresenter Margin="{TemplateBinding Padding}"
+										  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsOpen"
+								 Value="True">
+							<Trigger.EnterActions>
+								<BeginStoryboard>
+									<Storyboard>
+										<ani:FadeInThemeAnimation Storyboard.TargetName="Border"
+																  Storyboard.TargetProperty="Opacity" />
+									</Storyboard>
+								</BeginStoryboard>
+							</Trigger.EnterActions>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+</ResourceDictionary>

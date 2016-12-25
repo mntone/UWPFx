@@ -1,0 +1,102 @@
+﻿<Window x:Class="Mntone.Uwpfx.Sample.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:Mntone.Uwpfx.Sample"
+		mc:Ignorable="d"
+		Title="MainWindow"
+		Height="700"
+		Width="360">
+	<Grid Background="{DynamicResource ApplicationPageBackgroundThemeBrush}">
+		<Grid.LayoutTransform>
+			<!-- Touch friendly size: tv = 200%, touch (uwp) = 100%, mouse (wpf) = 80% -->
+			<ScaleTransform ScaleX="1.0"
+							ScaleY="1.0" />
+		</Grid.LayoutTransform>
+		<Grid.ContextMenu>
+			<ContextMenu>
+				<MenuItem Header="Item 1" />
+				<MenuItem Header="Item 2"
+						  IsCheckable="True"
+						  IsChecked="True" />
+				<Separator />
+				<MenuItem Header="Item 3" />
+				<Separator />
+				<MenuItem Header="Submenu 1">
+					<MenuItem Header="Item A" />
+					<MenuItem Header="Item B" />
+					<MenuItem Header="Item C" />
+				</MenuItem>
+			</ContextMenu>
+		</Grid.ContextMenu>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition />
+		</Grid.RowDefinitions>
+
+		<ScrollViewer Grid.Row="1">
+			<StackPanel x:Name="BackgroundElement"
+						x:FieldModifier="private"
+						Margin="12">
+				<TextBlock Text="UWPFx"
+						   Margin="0,10,0,10"
+						   Style="{StaticResource HeaderTextBlockStyle}" />
+
+
+				<TextBlock Text="Button sample"
+						   Margin="0,20,0,10"
+						   Style="{StaticResource TitleTextBlockStyle}" />
+				<TextBlock Text="Enable:"
+						   Margin="0,10,0,10"
+						   Style="{StaticResource BodyTextBlockStyle}" />
+				<Button Content="Enabled" />
+				<TextBlock Text="Disable:"
+						   Margin="0,10,0,10"
+						   Style="{StaticResource BodyTextBlockStyle}" />
+				<Button Content="Disabled"
+						IsEnabled="False" />
+
+				<TextBlock Text="TextBox sample"
+						   Margin="0,20,0,10"
+						   Style="{StaticResource TitleTextBlockStyle}" />
+				<TextBlock Text="Enable:"
+						   Margin="0,10,0,10"
+						   Style="{StaticResource BodyTextBlockStyle}" />
+				<TextBox Text="Text in TextBox" />
+				<TextBlock Text="Disable:"
+						   Margin="0,10,0,10"
+						   ToolTipService.ToolTip="ToolTip sample"
+						   Style="{StaticResource BodyTextBlockStyle}" />
+				<TextBox Text="Text in disable TextBox"
+						 IsEnabled="False" />
+
+				<TextBlock Text="PasswordBox sample"
+						   Margin="0,20,0,10"
+						   Style="{StaticResource TitleTextBlockStyle}" />
+				<TextBlock Text="Enable:"
+						   Margin="0,10,0,10"
+						   Style="{StaticResource BodyTextBlockStyle}" />
+				<PasswordBox Password="pass" />
+				<TextBlock Text="Disable:"
+						   Margin="0,10,0,10"
+						   Style="{StaticResource BodyTextBlockStyle}" />
+				<PasswordBox Password="pass"
+							 IsEnabled="False" />
+
+				<!--<RichTextBox>
+					<FlowDocument>
+						<Paragraph>
+							<Run>Paragraph 1</Run>
+							<Run>Paragraph 2</Run>
+							<Label>hello</Label>
+							<Hyperlink NavigateUri="http://uchukamen.com">
+								<Run>http://uchukamen.com</Run>
+							</Hyperlink>
+						</Paragraph>
+					</FlowDocument>
+				</RichTextBox>-->
+			</StackPanel>
+		</ScrollViewer>
+	</Grid>
+</Window>

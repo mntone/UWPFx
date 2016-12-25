@@ -1,0 +1,62 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<ControlTemplate x:Key="WindowTemplateKey"
+					 TargetType="Window">
+		<Border Background="{TemplateBinding Background}"
+				BorderBrush="{TemplateBinding BorderBrush}"
+				BorderThickness="{TemplateBinding BorderThickness}">
+			<Grid>
+				<AdornerDecorator>
+					<ContentPresenter />
+				</AdornerDecorator>
+
+				<ResizeGrip x:Name="WindowResizeGrip"
+							HorizontalAlignment="Right"
+							VerticalAlignment="Bottom"
+							Visibility="Collapsed"
+							IsTabStop="false" />
+			</Grid>
+		</Border>
+		<ControlTemplate.Triggers>
+			<MultiTrigger>
+				<MultiTrigger.Conditions>
+					<Condition Property="Window.ResizeMode"
+							   Value="CanResizeWithGrip" />
+					<Condition Property="Window.WindowState"
+							   Value="Normal" />
+				</MultiTrigger.Conditions>
+				<Setter TargetName="WindowResizeGrip"
+						Property="Visibility"
+						Value="Visible" />
+			</MultiTrigger>
+		</ControlTemplate.Triggers>
+	</ControlTemplate>
+
+	<Style x:Key="{x:Type Window}"
+		   TargetType="Window">
+		<Setter Property="Foreground"
+				Value="{StaticResource ApplicationForegroundThemeBrush}" />
+		<Setter Property="Background"
+				Value="{StaticResource ApplicationPageBackgroundThemeBrush}" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="Window">
+					<Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}">
+						<AdornerDecorator>
+							<ContentPresenter />
+						</AdornerDecorator>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Style.Triggers>
+			<Trigger Property="Window.ResizeMode"
+					 Value="CanResizeWithGrip">
+				<Setter Property="Template"
+						Value="{StaticResource WindowTemplateKey}" />
+			</Trigger>
+		</Style.Triggers>
+	</Style>
+</ResourceDictionary>
